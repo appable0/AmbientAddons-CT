@@ -20,12 +20,12 @@ register("worldLoad", () => {
 })
 
 register("postGuiRender", (x, y, gui) => {
-    if (!Settings.autoReady) return
+    if (Settings.autoReady == 0) return
     let container = Player.getContainer()
     if (isChest(container)) {
         if (container.getName() === "Start Dungeon?") {
             if (!hasClickedStart && isGuiLoaded(container)) {
-                if (!Settings.autoReadyCheckFull || getPlayerCount() === 5) {
+                if ((Settings.autoReady == 1) || getPlayerCount() === 5) {
                     hasClickedStart = true
                     new Thread(() => {
                         Thread.sleep(DELAY_TIME)

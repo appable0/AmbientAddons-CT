@@ -16,7 +16,7 @@ register("worldLoad", () => {
 })
 
 register("renderOverlay", (event) => {
-    if (!Settings.maskOverlay) return
+    if (Settings.maskDisplay == 0) return
     let item = Skyblock.getSkyblockId(Player.armor.getHelmet())
     let warningString = "&cMask!"
     let x = (Renderer.screen.getWidth() - Renderer.getStringWidth(warningString)) / 2 + 1
@@ -25,11 +25,11 @@ register("renderOverlay", (event) => {
         || (item == "FRAGGED_BONZO_MASK" && Date.now() - lastFraggedBonzoProc < 180000)
         || (item == "SPIRIT_MASK" && Date.now() - lastSpiritProc < 30000)
     ) {
-        if (Settings.maskDisplay == 0) {
+        if (Settings.maskDisplay == 1) {
             Renderer.drawString("&cMask!", x, y)
-        } else if (Settings.maskDisplay == 1) {
-            Renderer.drawStringWithShadow("&cMask!", x, y)
         } else if (Settings.maskDisplay == 2) {
+            Renderer.drawStringWithShadow("&cMask!", x, y)
+        } else if (Settings.maskDisplay == 3) {
             Skyblock.drawStringWithOutline("&cMask!", x, y)
         }
     }

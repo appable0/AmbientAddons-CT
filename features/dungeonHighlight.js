@@ -23,46 +23,46 @@ register("chat", (event) => {
 
 register("renderEntity", (entity, position, ticks, event) => {
     if (Skyblock.location != "Dungeon") return
-    if (hasEnteredThorn) return
     let mcEntity = entity.entity
 
     if (mcEntity instanceof EntityArmorStand) {
-        if (!Settings.starredHighlight || !entity.getName().includes("✯")) return
-
+        if ((Settings.starredHighlight == 0) || !entity.getName().includes("✯") || hasEnteredThorn) return
         let entityList = World.getWorld().func_72839_b(mcEntity, mcEntity.func_174813_aQ().func_72317_d(0, -1, 0))
         entityList.forEach((e) => {
             if (shouldDrawBox(e)) {
                 let aabb = e.func_174813_aQ().func_72314_b(0, 0, 0)
-                Skyblock.drawAABB(aabb, Settings.starredColor, Settings.starredEsp)
+                Skyblock.drawAABB(aabb, Settings.starredColor, Settings.starredHighlight == 2)
             }
         })
     } else {
         let aabb = mcEntity.func_174813_aQ().func_72314_b(0, 0, 0)
-        if (Settings.bestiaryHighlight && mcEntity instanceof EntityCaveSpider) {
-            Skyblock.drawAABB(aabb, Settings.bestiaryColor, Settings.bestiaryEsp)
-        } else if (Settings.miniHighlight && mcEntity instanceof EntityPlayer) {
+        if (!hasEnteredThorn && (Settings.bestiaryHighlight != 0) && mcEntity instanceof EntityCaveSpider) {
+            Skyblock.drawAABB(aabb, Settings.bestiaryColor, Settings.bestiaryHighlight == 2)
+        } else if (!hasEnteredThorn && (Settings.miniHighlight != 0) && mcEntity instanceof EntityPlayer) {
             let heldItem = mcEntity.func_70694_bm()
             if (heldItem != null && Skyblock.getSkyblockId(new Item(heldItem)) == "SILENT_DEATH") {
-                Skyblock.drawAABB(aabb, Settings.miniColor, Settings.miniEsp) 
+                Skyblock.drawAABB(aabb, Settings.miniColor, Settings.miniHighlight == 2) 
             } else {
                 let boots = mcEntity.func_82169_q(0)
                 if (boots != null) {
                     if (boots.func_77973_b()?.func_82814_b(boots) == 6029470) {
-                        Skyblock.drawAABB(aabb, Settings.miniColor, Settings.miniEsp) 
+                        Skyblock.drawAABB(aabb, Settings.miniColor, Settings.miniHighlight == 2) 
                     } 
                 }
             }   
-        } else if (Settings.bestiaryHighlight && mcEntity instanceof EntitySkeleton) {
+        } else if (!hasEnteredThorn && (Settings.bestiaryHighlight != 0) && mcEntity instanceof EntitySkeleton) {
+          if (hasEnteredThorn) return
             let helmet = mcEntity.func_82169_q(3)
             if (helmet != null) {
                 if (Skyblock.getSkyblockId(new Item(helmet)) == "SNIPER_HELMET") {
-                    Skyblock.drawAABB(aabb, Settings.bestiaryColor, Settings.bestiaryEsp)
+                    Skyblock.drawAABB(aabb, Settings.bestiaryColor, Settings.bestiaryHighlight == 2)
                 }
             }
-        } else if (Settings.batHighlight && mcEntity instanceof EntityBat && !mcEntity.field_70128_L) {
+        } else if ((Settings.batHighlight != 0) && mcEntity instanceof EntityBat && !mcEntity.field_70128_L) {
+            if (hasEnteredThorn && !Settings.showBatInThorn) return
             let hp = mcEntity.func_110138_aP()
             if ([100, 200, 400, 800].includes(hp)) {
-                Skyblock.drawAABB(aabb, Settings.batColor, Settings.batEsp)
+                Skyblock.drawAABB(aabb, Settings.batColor, (Settings.batHighlight != 0))
             }
         }
     }
