@@ -114,6 +114,14 @@ class Settings {
   melodyTerminal = false;
 
   @SwitchProperty({
+    name: "Spirit bow break timer",
+    description: "Displays a timer that tells the player when the spirit bow will break in Floor 4. &c/movethorn&7 to move.",
+    category: "Dungeon",
+    subcategory: "Miscellaneous",
+  })
+  spiritBow = false;
+
+  @SwitchProperty({
     name: "Send message when melody terminal opened",
     description: "Sends a message in party chat when melody terminal is opened.",
     category: "Dungeon",
