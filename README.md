@@ -14,12 +14,12 @@ A collection of QOL features for Hypixel Skyblock in a ChatTriggers module, larg
 * Wither shield display: Draws the current time remaining with the wither shield ability below the crosshair.
 
 ### Dungeon features
-* Terminator autoclick: Clicks repeatedly when use-item button is held while holding terminator.
+* Terminator autoclick: Clicks repeatedly when use-item button is held while holding terminator. Adjustable from 0 to 50 CPS.
 * Melody terminal helper: Blocks clicks on Melody terminal when not aligned.
 * Melody terminal announcements: Customizable party chat message when Melody terminal is opened and/or throttled.
 * Carpet QOL: Removes nearby carpets (credit UnclaimedBloom6).
 * Auto-close chests: Blocks opening secret chests inside dungeons (credit Floppa Client).
-* Ignore hopper interactions: Allows using items with abilities when looking at a hopper (credit Floppa Client).
+* Ignore hopper interactions: Allows using items with abilities when looking at a hopper (credit Floppa Client). Disabled when on a private island.
 
 ### Dungeon highlights
 All dungeon highlights can be off, highlight-only, or ESP.
