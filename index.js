@@ -9,22 +9,28 @@ if (!configDirectory.exists()) {
 
 import PogObject from "../PogData/index"
 const loadingData = new PogObject("../../AmbientAddons", { firstTime: true }, "firstTime.json")
+let steps = 0
 
 if (loadingData.firstTime) {
   FileLib.delete("./config/AmbientAddons/config.toml")
-  let oneTimeTrigger = register("tick", (elapsed) => {
-    ChatLib.chat(`§9§m${ChatLib.getChatBreak()}`)
-    ChatLib.chat("§b§lThanks for installing AmbientAddons!")
-    ChatLib.chat("")
-    ChatLib.chat("§aUse §l/ambient §r§ato access the GUI.")
-    ChatLib.chat("")
-    ChatLib.chat("§e§oIf you previously used this mod, the config data has been reset")
-    ChatLib.chat("§e§odue to internal changes. Sorry for the inconvinience.")
-    ChatLib.chat(`§9§m${ChatLib.getChatBreak()}`)
-    oneTimeTrigger.unregister()
-  })
-  loadingData.firstTime = false
-  loadingData.save()
+  let oneTimeTrigger = register("step", (elapsed) => {
+    if (steps > 0) {
+      oneTimeTrigger.unregister()
+      loadingData.firstTime = false
+      loadingData.save()
+    } else {
+      ChatLib.chat(`§9§m${ChatLib.getChatBreak()}`)
+      ChatLib.chat("§b§lThanks for installing AmbientAddons!")
+      ChatLib.chat("")
+      ChatLib.chat("§aUse §l/ambient §r§ato access the GUI.")
+      ChatLib.chat("")
+      ChatLib.chat("§e§oIf you previously used this mod, the config data has been reset")
+      ChatLib.chat("§e§odue to internal changes. Sorry for the inconvinience.")
+      ChatLib.chat(`§9§m${ChatLib.getChatBreak()}`)
+    }
+    steps++
+  }).setDelay(1)
+  
 }
 
 import Settings from "./settings"
