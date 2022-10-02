@@ -31,7 +31,7 @@ import Settings from "./settings"
 
 import "./utils/skyblock"
 import "./default/bonzo"
-import "./default/togglePerspective"
+import "./default/keybinds"
 import "./features/dungeonQol"
 import "./features/carpet"
 import "./features/dungeonHighlight"

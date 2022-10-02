@@ -29,7 +29,7 @@ register("renderOverlay", (event) => {
 })
 
 register("actionBar", (event) => {
-    if (!Settings.shieldOverlay) return
+    if (Settings.shieldDisplay == 0) return
     if (witherImpactEndTime === null) {
         witherImpactEndTime = Date.now() + 5000
     }

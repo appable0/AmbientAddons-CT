@@ -2,10 +2,10 @@
 A collection of QOL features for Hypixel Skyblock in a ChatTriggers module, largely related to dungeons. A Forge version may or may not be made at some later point. 
 
 ## Features
-* Keybind to toggle perspective between first-person and third-person behind the player.
+* Keybind to re-send last message in party chat. Unbound by default.
+* Keybind to toggle perspective between first-person and third-person behind the player. Unbound by default.
 * Bonzo and spirit mask timer: rendered as an item durability bar.
 <img src="https://user-images.githubusercontent.com/16139460/193432138-0ffdfbc5-ef8d-4eb2-875a-32a0488d0b54.png" width="40">
-
 
 ### Displays
 * Bonzo mask display: when wearing a procced bonzo mask.
@@ -44,4 +44,8 @@ All dungeon highlights can be off, highlight-only, or ESP.
 * Trapper auto-start quest: automatically starts trapper quests.
 * Trapper ESP: Renders position of trapper mobs from reasonably large distance.
 <img src="https://user-images.githubusercontent.com/16139460/193432076-da692f74-dcc5-4b6f-9604-f04ed03a2fcd.png" width="400">
+
+## Notes
+* The config folder is saved in the .minecraft config folder, unlike most ChatTriggers modules, so that updating manually is simple without resetting config.
+* If you have used previous versions of AmbientAddons, the configuration was unfortunately reset because of a large number of breaking changes to the save files.
 
