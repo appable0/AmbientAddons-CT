@@ -1,6 +1,21 @@
 # AmbientAddons-CT
 A collection of QOL features for Hypixel Skyblock in a ChatTriggers module, largely related to dungeons. A Forge version may or may not be made at some later point. 
 
+## Commands
+* /ambient: open main settings GUI
+* /moveCat: move catplague's wonderful cat.
+* /movePing: move the ping and TPS display.
+* /amPing: Send current ping and TPS in chat.
+<img src="https://user-images.githubusercontent.com/16139460/193432699-d2ec5ef0-c906-4542-b464-ac4a0c8aed39.png" width="300">
+
+### Autobuy
+Note that Autobuy comes with a number of profitable drops preconfigured. If you are ironman, please reconsider this list or leave the feature disabled.
+* /autobuy list: show current autobuy list.
+* /autobuy add <Skyblock ID> [Max price to buy at]: add an item to automatically purchase.
+* /autobuy remove <Skyblock ID>: don't autobuy an item.
+Default list:
+<img src="https://user-images.githubusercontent.com/16139460/193432764-7507b65c-d78e-4ae5-8c98-25ea4b655c1e.png" width="400">
+
 ## Features
 * Keybind to re-send last message in party chat. Unbound by default.
 * Keybind to toggle perspective between first-person and third-person behind the player. Unbound by default.
