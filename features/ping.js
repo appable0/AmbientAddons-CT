@@ -8,12 +8,11 @@ import PogObject from "../../PogData/index"
 
 let averageTps = 20
 const tpsWindow = 10
+let tpsSampleCount = 0
 
 const S03_PACKET_TIME_UPDATE = Java.type("net.minecraft.network.play.server.S03PacketTimeUpdate")
 const pingMove = new Gui()
 let prevTime = null
-let tpsSampleCount = 0
-
 
 const data = new PogObject("../../AmbientAddons", {
   pingX: 10,

@@ -1,6 +1,7 @@
 /// <reference types="../../CTAutocomplete" />
 /// <reference lib="es2015" />
 
+/*
 import Settings from "../settings"
 import PogObject from "../../PogData/index"
 import Skyblock from "../utils/skyblock"
@@ -200,3 +201,4 @@ function itemToLabel(item) {
     return undefined
   }
 }
+*/

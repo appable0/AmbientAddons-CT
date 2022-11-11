@@ -62,7 +62,7 @@ register("renderEntity", (entity, position, ticks, event) => {
       let hp = mcEntity.func_110138_aP()
       if (!hasEnteredThorn && [100, 200, 400, 800].includes(hp)) {
         Skyblock.drawAABB(aabb, Settings.batColor, (Settings.batHighlight != 0))
-      } else if (hasEnteredThorn) {
+      } else if (hasEnteredThorn && !mcEntity.func_82150_aj()) {
         Skyblock.drawAABB(aabb, Settings.batColor, (Settings.batHighlight != 0))
       }
     }

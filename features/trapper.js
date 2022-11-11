@@ -13,7 +13,7 @@ const EntityRabbit = Java.type("net.minecraft.entity.passive.EntityRabbit")
 
 const Animals = [EntitySheep, EntityPig, EntityCow, EntityChicken, EntityRabbit]
 const Color = Java.type("java.awt.Color")
-const trapperRegex = /^&e\[NPC\] Trevor The Trapper&f: &rYou can find your &([0-9a-f])\w+ &fanimal near the &([0-9a-f])([\w ]+)&f.&r/
+const trapperRegex = /^&e\[NPC\] Trevor The Trapper&f: &rYou can find your &([0-9a-f])&l\w+ &fanimal near the &([0-9a-f])([\w ]+)&f.&r/
 
 let isQuestActive = false
 let color = null

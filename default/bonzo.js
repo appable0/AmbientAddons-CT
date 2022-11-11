@@ -1,6 +1,7 @@
 /// <reference types="../../CTAutocomplete" />
 /// <reference lib="es2015" />
 
+/*
 import ItemLib from "../utils/itemLib"
 import Skyblock from "../utils/skyblock"
 import Settings from "../settings"
@@ -62,3 +63,5 @@ register("renderItemOverlayIntoGui", (item, x, y) => {
     if (durability < 1) ItemLib.renderItemDurability(durability, x, y)
 })
 
+
+*/

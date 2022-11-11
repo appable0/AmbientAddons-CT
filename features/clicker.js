@@ -4,6 +4,7 @@
 import Settings from "../settings"
 import Skyblock from "../utils/skyblock"
 
+/*
 
 let lastTermClick = 0
 
@@ -30,3 +31,5 @@ register("tick", () => {
         }
     }
 })
+
+*/

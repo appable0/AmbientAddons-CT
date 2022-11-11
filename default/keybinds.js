@@ -1,6 +1,7 @@
 /// <reference types="../../CTAutocomplete" />
 /// <reference lib="es2015" />
 
+/*
 const thirdPersonKey = new KeyBind("Toggle between first- and third-person.", Keyboard.KEY_NONE, "AmbientAddons")
 const secondPersonKey = new KeyBind("Toggle between first- and second-person.", Keyboard.KEY_NONE, "AmbientAddons")
 const sendLastMessage = new KeyBind("Sends last message in party chat.", Keyboard.KEY_NONE, "AmbientAddons")
@@ -32,3 +33,5 @@ register("tick", () => {
     
   }
 }).setPriority(Priority.LOWEST)
+
+*/

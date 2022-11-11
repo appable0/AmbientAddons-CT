@@ -1,0 +1,1 @@
+zip -r ../AmbientAddonsCompressed.zip . -x ".*" -x "__MACOSX" -x "*.sh"

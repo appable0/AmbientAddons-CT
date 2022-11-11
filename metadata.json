@@ -1,7 +1,7 @@
 {
     "creator": "appable",
     "description": "Miscallaneous QOL features!",
-    "version": "0.3.7",
+    "version": "0.3.7.1",
     "entry": "index.js",
     "requires": ["PogData", "Vigilance", "CTAutocomplete", "BeaconBeam"]
 }

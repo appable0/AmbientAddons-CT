@@ -27,10 +27,7 @@ register("postGuiRender", (x, y, gui) => {
             if (!hasClickedStart && isGuiLoaded(container)) {
                 if ((Settings.autoReady == 1) || getPlayerCount() === 5) {
                     hasClickedStart = true
-                    new Thread(() => {
-                        Thread.sleep(DELAY_TIME)
-                        container.click(START_SLOT, false, "MIDDLE")
-                    }).start()
+                    container.click(START_SLOT, false, "MIDDLE")
                 }
             }
         } else if (container.getName().startsWith("Catacombs - ")) {
@@ -39,10 +36,7 @@ register("postGuiRender", (x, y, gui) => {
                 let nameSlot = READY_INV_SLOTS.filter(slot => getUsernameFromItem(container.getStackInSlot(slot)) === username)[0]
                 let clickSlot = nameSlot + 9
                 hasClickedReady = true
-                new Thread(() => {
-                    Thread.sleep(DELAY_TIME)
-                    container.click(clickSlot, false, "MIDDLE")
-                }).start()
+                container.click(clickSlot, false, "MIDDLE")
             }
         }
     } 
