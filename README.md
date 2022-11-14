@@ -1,7 +1,10 @@
-# AmbientAddons-CT
-A collection of QOL features for Hypixel Skyblock in a ChatTriggers module, largely related to dungeons. A Forge version may or may not be made at some later point. 
+# ~~AmbientAddons-CT~~
+A collection of QOL features for Hypixel Skyblock in a ChatTriggers module, largely related to dungeons. 
 
-## Commands
+## Discontinuation
+**The ChatTriggers module has been discontinued. Further support and new features will continue for the Forge mod available at [appable0/AmbientAddons](https://github.com/appable0/AmbientAddons).**
+
+### Commands
 * /ambient: open main settings GUI
 * /moveCat: move catplague's wonderful cat.
 * /movePing: move the ping and TPS display.
